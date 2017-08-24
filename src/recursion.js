@@ -6,17 +6,42 @@
 // denoted by n!, is the product of all positive integers less than or equal to n.
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
+
+// INPUT: number, n
+// OUTPUT: number
+// CONSTRAINTS: N >= 0
+// EDGE: None
 var factorial = function(n) {
+	// if n < 0, return null
+	if (n < 0) {
+		return null;
+	}
+	if (n === 1 || n === 0) {
+		return 1;
+	} 
+	return n * factorial(n - 1);
 };
 
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
+// INPUT: Array of numbers
+// OUTPUT: Single number, the sum of values in input array
 var sum = function(array) {
+	if (array.length === 0) {
+		return 0;
+	}
+	return array[0] + sum(array.slice(1));
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
+// INPUT: Array containing primitives and other arrays of primitives
+// OUTPUT: Sum off all primitives in array and nested arrays.
 var arraySum = function(array) {
+	if (array.length === 0) {
+		return 0;
+	}
+	return 
 };
 
 // 4. Check if a number is even.
@@ -50,11 +75,23 @@ var powerOfTwo = function(n) {
 };
 
 // 9. Write a function that reverses a string.
+// Input: single string
+// Output: string that is the reverse of the argument.
 var reverse = function(string) {
+	if (string === '') {
+		return '';
+	}
+	return reverse(string.slice(1)) + string.charAt(0);
 };
 
 // 10. Write a function that determines if a string is a palindrome.
+// Input: single string
+// Output: boolean indicating whether string is === its reverse.
 var palindrome = function(string) {
+	if (string[0] === string[string.length - 1]) {
+		return true;
+	} 
+	return palindrome(string.slice(1, string.length - 1));
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -149,6 +186,7 @@ var replaceKeysInObj = function(obj, oldKey, newKey) {
 // fibonacci(5); // [0,1,1,2,3,5]
 // Note: The 0 is not counted.
 var fibonacci = function(n) {
+
 };
 
 // 26. Return the Fibonacci number located at index n of the Fibonacci sequence.
